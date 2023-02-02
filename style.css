@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+}
+
+img{
+    margin: 5px;
+    width: 10%; 
+}
+body{
+    font-family: sans-serif;
+    font-size: 16px;
+    background-color: steelblue;
+    color: aliceblue;
+}
+
+nav{ 
+    background-color: steelblue;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+nav a{ 
+    color: #fff; 
+    display: inline-block;
+    padding: 0.5em;
+    text-decoration: none; 
+}
+nav a:hover{
+    color: aqua; 
+}
+p {
+    padding-top: 10px;
+}
+
+.formulario {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+.datos {
+    margin-right: 100px;
+}
+
+hr {
+    width: 50%;
+    margin-top: 10px;
+}
