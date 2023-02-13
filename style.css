@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
@@ -53,4 +54,8 @@ p {
 hr {
     width: 50%;
     margin-top: 10px;
+}
+
+#myDIV {
+    visibility: hidden;
 }

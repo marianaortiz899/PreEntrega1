@@ -15,7 +15,12 @@ function aceptar(LugarOrigen, LugarDestino, Cantidad) {
     } else {
 
     }
-
+    var x = document.getElementById('myDIV');
+    if (x.style.visibility === 'hidden') {
+      x.style.visibility = 'visible';
+    } else {
+      x.style.visibility = 'hidden';
+    }
 }
 
 function siguiente(LugarOrigen, LugarDestino, Cantidad) {
