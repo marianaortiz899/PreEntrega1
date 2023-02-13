@@ -3,6 +3,7 @@ function aceptar(LugarOrigen, LugarDestino, Cantidad) {
     // console.log("Tu lugar de origen es: " + LugarOrigen + "y tu lugar de Destino es: " + LugarDestino + "Para una cantidad de personas: " + Cantidad)
     let value = confirm("Tu lugar de origen es: " + LugarOrigen + " y tu lugar de destino es: " + LugarDestino + " Para una cantidad de personas: " + Cantidad)
     var x = document.getElementById('myDIV');
+    x.style.visibility = 'hidden'
 
     if (value) {
         if ((LugarOrigen === "Mendoza" && LugarDestino === "Buenos Aires") || (LugarOrigen === "Buenos Aires" && LugarDestino === "Mendoza")) {
@@ -19,7 +20,6 @@ function aceptar(LugarOrigen, LugarDestino, Cantidad) {
         }
         if ((LugarOrigen === "Mendoza" && LugarDestino === "Mendoza") || (LugarOrigen === "Buenos Aires" && LugarDestino === "Buenos Aires") || (LugarOrigen === "Cordoba" && LugarDestino === "Cordoba")) {
             alert("No es posible realizar tu compra ya que lugar de destino y origen coinciden")
-            x.style.visibility = 'hidden'
             document.getElementById("total").value = ''
         }
     } else {
@@ -31,19 +31,17 @@ function aceptar(LugarOrigen, LugarDestino, Cantidad) {
 function visibility(x) {
     if (x.style.visibility === 'hidden') {
         x.style.visibility = 'visible';
-    } else {
-        x.style.visibility = 'hidden';
     }
 }
 
-function siguiente(LugarOrigen, LugarDestino, Cantidad) {
+function calcularTotalFinal(LugarOrigen, LugarDestino, Cantidad) {
     if (document.getElementById('visa').checked) {
         if (document.getElementById("cuota1").checked || document.getElementById("cuota2").checked || document.getElementById("cuota3").checked) {
             document.getElementById("TotalFinal").value = "$ " + calcularTotal(LugarOrigen, LugarDestino, Cantidad, 2)
         } else {
             alert("Para pagar con visa debe seleccionar la cantidad de cuotas.")
         }
-    } else if (document.getElementById('contado').checked)
+    } else if (document.getElementById('contado').checked) {
         if (document.getElementById("cuota1").checked || document.getElementById("cuota2").checked || document.getElementById("cuota3").checked) {
             document.getElementById("cuota1").checked = false
             document.getElementById("cuota2").checked = false
@@ -53,6 +51,7 @@ function siguiente(LugarOrigen, LugarDestino, Cantidad) {
             document.getElementById("TotalFinal").value = "$ " + calcularTotal(LugarOrigen, LugarDestino, Cantidad, 1)
 
         }
+    }
 }
 
 function calcularTotal(LugarOrigen, LugarDestino, Cantidad, tipo) {
