@@ -2,24 +2,37 @@
 function aceptar(LugarOrigen, LugarDestino, Cantidad) {
     // console.log("Tu lugar de origen es: " + LugarOrigen + "y tu lugar de Destino es: " + LugarDestino + "Para una cantidad de personas: " + Cantidad)
     let value = confirm("Tu lugar de origen es: " + LugarOrigen + " y tu lugar de destino es: " + LugarDestino + " Para una cantidad de personas: " + Cantidad)
+    var x = document.getElementById('myDIV');
 
     if (value) {
-        if ((LugarOrigen === "Mendoza" && LugarDestino === "Buenos Aires") || (LugarOrigen === "Buenos Aires" && LugarDestino === "Mendoza"))
+        if ((LugarOrigen === "Mendoza" && LugarDestino === "Buenos Aires") || (LugarOrigen === "Buenos Aires" && LugarDestino === "Mendoza")) {
             document.getElementById("total").value = "$" + calcularTotal(LugarOrigen, LugarDestino, Cantidad, 1)
-        if ((LugarOrigen === "Mendoza" && LugarDestino === "Cordoba") || (LugarOrigen === "Cordoba" && LugarDestino === "Mendoza"))
+            visibility(x)
+        }
+        if ((LugarOrigen === "Mendoza" && LugarDestino === "Cordoba") || (LugarOrigen === "Cordoba" && LugarDestino === "Mendoza")) {
             document.getElementById("total").value = "$" + calcularTotal(LugarOrigen, LugarDestino, Cantidad, 1)
-        if ((LugarOrigen === "Cordoba" && LugarDestino === "Buenos Aires") || (LugarOrigen === "Buenos Aires" && LugarDestino === "Cordoba"))
+            visibility(x)
+        }
+        if ((LugarOrigen === "Cordoba" && LugarDestino === "Buenos Aires") || (LugarOrigen === "Buenos Aires" && LugarDestino === "Cordoba")) {
             document.getElementById("total").value = "$" + calcularTotal(LugarOrigen, LugarDestino, Cantidad, 1)
-        if ((LugarOrigen === "Mendoza" && LugarDestino === "Mendoza") || (LugarOrigen === "Buenos Aires" && LugarDestino === "Buenos Aires") || (LugarOrigen === "Cordoba" && LugarDestino === "Cordoba"))
+            visibility(x)
+        }
+        if ((LugarOrigen === "Mendoza" && LugarDestino === "Mendoza") || (LugarOrigen === "Buenos Aires" && LugarDestino === "Buenos Aires") || (LugarOrigen === "Cordoba" && LugarDestino === "Cordoba")) {
             alert("No es posible realizar tu compra ya que lugar de destino y origen coinciden")
+            x.style.visibility = 'hidden'
+            document.getElementById("total").value = ''
+        }
     } else {
 
     }
-    var x = document.getElementById('myDIV');
+
+}
+
+function visibility(x) {
     if (x.style.visibility === 'hidden') {
-      x.style.visibility = 'visible';
+        x.style.visibility = 'visible';
     } else {
-      x.style.visibility = 'hidden';
+        x.style.visibility = 'hidden';
     }
 }
 
