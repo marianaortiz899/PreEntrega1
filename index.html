@@ -13,7 +13,7 @@
         <h1>Aerolineas</h1>
         <img src="img/logo.png" alt="logo">
     </header>
-    <nav>
+    <div id="body">
         <div class="formulario">
             <div class="datos">
                 <p> Elige lugar de origen</t>
@@ -39,8 +39,9 @@
                     <input id="cant" type="number" min="1" max="15">
                 </form>
                 </p>
-                <button onclick= 'aceptar(document.getElementById("origen").value,document.getElementById("destino").value ,document.getElementById("cant").value, 1 )'>
-                    Aceptar 
+                <button
+                    onclick='aceptar(document.getElementById("origen").value,document.getElementById("destino").value ,document.getElementById("cant").value, 1 )'>
+                    Aceptar
                 </button>
 
             </div>
@@ -79,7 +80,7 @@
                 <input disabled type="text" id="TotalFinal">
                 <button><a href="./pages/datos.html">Siguiente</a></button>
             </div>
-         </div>
-    </nav>
-    
+        </div>
+    </div>
+
 </body>
