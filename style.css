@@ -33,9 +33,7 @@ body{
     padding: 0.5em;
     text-decoration: none; 
 }
-#body a:hover{
-    color: aqua; 
-}
+
 p {
     padding-top: 10px;
 }
@@ -58,6 +56,33 @@ hr {
 
 #myDIV {
     visibility: hidden;
+}
+#consultar { 
+    background-color: steelblue;
+    text-align: center;
+}
+#consultar a{ 
+    color: #fff; 
+    display: inline-block; 
+    padding: 0.5em;
+    text-decoration: none; 
+}
+#consultar a:hover{
+    color: aqua; 
+}
+    
+#atras{
+    background-color: steelblue;
+    text-align: center;
+}
+#atras a{
+    color: #fff; 
+    display: inline-block; 
+    padding: 0.5em;
+    text-decoration: none; 
+}
+#atras a:hover{
+    color: aqua; 
 }
 
 .tabla {
@@ -84,6 +109,7 @@ table {
     text-align: center;
     padding-left: 40%;
     margin-right: 45%;
+    border-color: #fff;
 
 
 }
