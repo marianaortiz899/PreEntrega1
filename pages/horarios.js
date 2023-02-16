@@ -7,27 +7,32 @@ const aeropuertos = [
 ];
 
 function foo() {
-    const tablavuelosProductos = document.getElementById("tablavuelosProductos")
+    const tablaVuelos = document.getElementById("tablaVuelos")
     const vuelos_head = document.getElementById("vuelos_head")
     vuelos_head.className = "background-table"
 
-    aeropuertos.forEach(function(producto) {
+    aeropuertos.forEach(function(vuelo) {
         let fila = document.createElement('tr')
         let celdaVuelo = document.createElement('td')
         let celdaLlegada = document.createElement('td')
         let celdaPartida = document.createElement('td')
         let celdaEstado = document.createElement('td')
     
-        celdaVuelo.textContent = producto.vuelo
-        celdaLlegada.textContent = producto.llegada
-        celdaPartida.textContent = producto.partida
-        celdaEstado.textContent = producto.estado
+        celdaVuelo.textContent = vuelo.vuelo
+        celdaLlegada.textContent = vuelo.llegada
+        celdaPartida.textContent = vuelo.partida
+        celdaEstado.textContent = vuelo.estado
       
         fila.append(celdaVuelo)
         fila.append(celdaLlegada)
         fila.append(celdaPartida)
         fila.append(celdaEstado)
       
-        tablavuelosProductos.append(fila)
+        tablaVuelos.append(fila)
     })
+
+
+
 }
+
+

@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <title>Horarios </title>
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script type="text/javascript" src="./informacion.js"></script>
     <script type="text/javascript" src="./horarios.js"></script>
 </head>
 
@@ -17,7 +19,6 @@
     <div class="tabla">
         <h3> Horarios de vuelos </h3>
     </div>
-    <div id = "prducto"> </div>
     <section>
         <table id="vuelos"> 
             <thead id="vuelos_head">        
@@ -28,10 +29,17 @@
                     <th>Estado</th>
                 </tr>
             </thead>
-            <tbody id="tablavuelosProductos"></tbody>
+            <tbody id="tablaVuelos"></tbody>
          </table>
-     </section>
+    </section>
+     <p id="boton">
+        Búsqueda de información: <input type="texto" name="name" placeholder="Vuelo..." id="name">
+        <button onclick="autocompletado()" id="show">Buscar</button> 
+    </p>
+
 </body>
 <div id="atras">
-    <a href="../index.html"> atrás </a>
+    <a href="../index.html"> <span class="material-symbols-outlined">
+        arrow_back
+        </span>atrás </a>
 </div>

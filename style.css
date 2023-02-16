@@ -60,6 +60,9 @@ hr {
 #consultar { 
     background-color: steelblue;
     text-align: center;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
 }
 #consultar a{ 
     color: #fff; 
@@ -74,6 +77,9 @@ hr {
 #atras{
     background-color: steelblue;
     text-align: center;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
 }
 #atras a{
     color: #fff; 
@@ -83,6 +89,10 @@ hr {
 }
 #atras a:hover{
     color: aqua; 
+}
+
+#boton {
+    text-align: center;
 }
 
 .tabla {
