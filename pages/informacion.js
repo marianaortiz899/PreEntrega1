@@ -10,7 +10,7 @@ function autocompletado() {
 		return horario.name === name;
 	});
 	if (horario) {
-		confirm(`El vuelo ${name} será pilotado por ${horario.Piloto} con un numero de pasajeros ${horario.NumeroDePasajeros}`);
+		confirm(`El vuelo ${name} será pilotado por ${horario.Piloto} con ${horario.NumeroDePasajeros} pasajeros`);
 	} else {
 		alert("No existe el vuelo");
 	}
