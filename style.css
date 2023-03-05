@@ -9,8 +9,8 @@ header {
 }
 
 img{
-    margin: 5px;
-    width: 10%; 
+    margin: 1px;
+    width: 5%; 
 }
 body{
     font-family: sans-serif;
@@ -20,12 +20,13 @@ body{
 }
 
 #body{ 
-    background-color: steelblue;
-    text-align: center;
+    background-color: aliceblue(32, 92, 141);
+    text-align: left;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
+    margin-bottom: 1 px;
 }
 #body a{ 
     color: #fff; 
@@ -47,6 +48,8 @@ p {
 
 .datos {
     margin-right: 100px;
+    margin-bottom: 50px;
+    margin-left: 200px;
 }
 
 hr {
@@ -56,11 +59,14 @@ hr {
 
 #myDIV {
     visibility: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
 }
 #consultar { 
     background-color: steelblue;
     text-align: center;
-    bottom: 0;
     position: absolute;
     width: 100%;
 }
@@ -133,4 +139,25 @@ th, td {
     background-color: rgb(255, 255, 255);
     color: black;
 }
-  
+
+#INICIO{
+    margin: 1px;
+    width: 5%; 
+    text-align: left
+}
+
+#IDS{
+    color: #fff;
+}
+
+#imagen{
+    margin: 1px;
+    width: 5%; 
+}
+
+#bodyInicio{
+    padding-top: 50px;
+    margin-left: 250px;
+    margin-right: 250px;
+    justify-content: center;
+}

@@ -86,3 +86,9 @@ function calcularTotal(LugarOrigen, LugarDestino, Cantidad, tipo) {
         }
     }
 }
+
+function foo() {
+    let boton = document.getElementById("IDS")
+    console.log(boton)
+    boton.onclick = () => {window.location.replace("./pages/inicioDS.html")}                
+}
