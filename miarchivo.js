@@ -1,7 +1,7 @@
 
 function aceptar(LugarOrigen, LugarDestino, Cantidad) {
     // console.log("Tu lugar de origen es: " + LugarOrigen + "y tu lugar de Destino es: " + LugarDestino + "Para una cantidad de personas: " + Cantidad)
-    let value = confirm("Tu lugar de origen es: " + LugarOrigen + " y tu lugar de destino es: " + LugarDestino + " Para una cantidad de personas: " + Cantidad)
+    let value = Swal.fire("Tu lugar de origen es: " + LugarOrigen + " y tu lugar de destino es: " + LugarDestino + " Para una cantidad de personas: " + Cantidad)
     var x = document.getElementById('myDIV');
     x.style.visibility = 'hidden'
 
@@ -19,7 +19,7 @@ function aceptar(LugarOrigen, LugarDestino, Cantidad) {
             visibility(x)
         }
         if ((LugarOrigen === "Mendoza" && LugarDestino === "Mendoza") || (LugarOrigen === "Buenos Aires" && LugarDestino === "Buenos Aires") || (LugarOrigen === "Cordoba" && LugarDestino === "Cordoba")) {
-            alert("No es posible realizar tu compra ya que lugar de destino y origen coinciden")
+            Swal.fire('Error', "No es posible realizar tu compra ya que lugar de destino y origen coinciden", 'error')
             document.getElementById("total").value = ''
         }
     } else {
@@ -39,14 +39,14 @@ function calcularTotalFinal(LugarOrigen, LugarDestino, Cantidad) {
         if (document.getElementById("cuota1").checked || document.getElementById("cuota2").checked || document.getElementById("cuota3").checked) {
             document.getElementById("TotalFinal").value = "$ " + calcularTotal(LugarOrigen, LugarDestino, Cantidad, 2)
         } else {
-            alert("Para pagar con visa debe seleccionar la cantidad de cuotas.")
+            Swal.fire('Atención', "Para pagar con visa debe seleccionar la cantidad de cuotas.", 'warning')
         }
     } else if (document.getElementById('contado').checked) {
         if (document.getElementById("cuota1").checked || document.getElementById("cuota2").checked || document.getElementById("cuota3").checked) {
             document.getElementById("cuota1").checked = false
             document.getElementById("cuota2").checked = false
             document.getElementById("cuota3").checked = false
-            alert("No puede pagar en cuotas si paga al contado.")
+            Swal.fire('Atención', "No puede pagar en cuotas si paga al contado.", 'warning')
         } else {
             document.getElementById("TotalFinal").value = "$ " + calcularTotal(LugarOrigen, LugarDestino, Cantidad, 1)
 
@@ -85,10 +85,4 @@ function calcularTotal(LugarOrigen, LugarDestino, Cantidad, tipo) {
             }
         }
     }
-}
-
-function foo() {
-    let boton = document.getElementById("IDS")
-    console.log(boton)
-    boton.onclick = () => {window.location.replace("./pages/inicioDS.html")}                
 }

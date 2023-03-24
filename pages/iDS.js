@@ -7,11 +7,13 @@ form.addEventListener('submit', (e) => {
     const password = document.getElementById("inputPassword").value;
     const name = document.getElementById("inputName").value + ' ' + document.getElementById("inputSurname").value;
     console.log(email, password);
-    if (email=="ortizmariana899@gmail.com" && password=="2805"){
+    const permiso= (email ==="ortizmariana899@gmail.com")? true : false
+    permiso ? Swal.fire('Éxito', "Usuario encontrado", 'success') : Swal.fire('Error', "Usuario no encontrado", 'error');
+    if (email==="ortizmariana899@gmail.com" && password=="2805"){
         localStorage.setItem('user.email', email);
         localStorage.setItem('user.password', password);
         localStorage.setItem('user.name', name);
-        window.location.replace("./subInicio.html");
+        window.location.replace("../index.html");
     } else {
         visibility(x);
     }

@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1, 
+        "destino": "Mendoza",
+        "vuelo":"AF-0500", 
+        "llegada": "18:30", 
+        "partida": "20:30", 
+        "estado": "Con retraso"
+    },
+    {
+        "id": 2,
+        "destino": "Buenos Aires",
+        "vuelo":"AM-191", 
+        "llegada": "18:14", 
+        "partida": "23:00", 
+        "estado": "A tiempo" 
+    },
+    {   
+        "destino": "Jujuy",
+        "id": 3,
+        "vuelo":"KII",
+        "llegada": "23:00",
+        "partida": "01:00", 
+        "estado": "A tiempo"
+    }
+]

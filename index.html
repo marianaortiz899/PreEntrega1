@@ -1,125 +1,100 @@
-<!DOCTYPE html>
-<html lang="es">
-    
-<head>
-    <meta charset="UTF-8">
-    <title>Inicio</title>
-    <link rel="stylesheet" href="style.css">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="miarchivo.js"></script>
-    <body class="p-0 m-0 border-0 bd-example" onload="foo()">
-        <nav class="navbar bg-body-tertiary">
-          <div class="container-fluid">
-                <img src="img/logo.png" alt="logo">
-                <a class="navbar-brand" href="#">AEROLINEAS</a>
-                <button id= "IDS" type="button" class="btn btn-primary">Inicio de sesión</button>
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">BUSQUEDA</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">informacion</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Acerda de</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Nosotros</a></li>
-                                        <hr class="dropdown-divider">
-                                    <li><a class="dropdown-item" href="#">Inicio de sesión</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <form class="d-flex mt-3" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </body>
-</head>
-
-<body>
-    <div id="body">
-        <div class="formulario">
-            <div class="datos">
-                <p> Elige lugar de origen</t>
-                <form>
-                    <select id="origen">
-                        <option id="o1">Mendoza</option>
-                        <option id="o2">Buenos Aires</option>
-                        <option id="o3">Cordoba</option>
-                    </select>
-                </form>
-                <p> Elige lugar de destino</p>
-                <form>
-                    <select id="destino">
-                        <option id="d1">Mendoza</option>
-                        <option id="d2">Buenos Aires</option>
-                        <option id="d3">Cordoba</option>
-                    </select>
-                </form>
-                <p> Numero de pasajes</p>
-                <form>
-                    <input id="cant" type="number" min="1" max="15">
-                </form>
-                </p>
-                <button   class="btn btn-outline-success" type="submit"
-                    onclick='aceptar(document.getElementById("origen").value,document.getElementById("destino").value ,document.getElementById("cant").value, 1 )'>
-                    Aceptar
-                    
-                </button>
-            </div>
-            <p>Total:</p>
-            <input disabled type="text" id="total">
-
-            
-        </div>
-        <div id="myDIV">
-            <div class="formulario">
-                <div class="datos">
-                    <form>
-                        <p>
-                            ¿Cómo desea pagar?
-                        </p>
-                        <input type="radio" id="visa" name="tarjeta">visa
-                        <br>
-                        <input type="radio" id="contado" name="tarjeta">contado
-                        <br>
-                    </form>
-                    <form>
-                        <p>¿En cúantas cuotas?</p>
-                        <input type="radio" id="cuota1" name="cuotas">Una cuota sin interés.
-                        <br>
-                        <input type="radio" id="cuota2" name="cuotas">Dos cuotas con interés (20%).
-                        <br>
-                        <input type="radio" id="cuota3" name="cuotas">Tres cuotas con interés (30%).
-                        <br>
-                    </form>
-                    <button  class="btn btn-outline-success" type="submit"
-                        onclick='calcularTotalFinal (document.getElementById("origen").value,document.getElementById("destino").value ,document.getElementById("cant").value )'>
-                        Calcular Total </button>
-                </div>
-                <br>
-                <p> Total final:</p>
-                <input disabled type="text" id="TotalFinal">
-            </div>
-        </div>
+    <script type="text/javascript" src="index.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <nav class="navbar bg-body-tertiary fixed-top">
+      <div class="container-fluid">
+          <img src="./img/logo.png" alt="logo" height="60px" >
+            <a class="navbar-brand" href="../index.html"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+              <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasNavbarLabel">INICIO</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                      <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="./pages/busquedaVT.html">Estado de vuelo</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="./pages/iDS.html">Inicio de sesión</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="miarchivo.html">Mi reserva</a>
+                  </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </nav>
+  </head>
+</html>
+<body class="p-3 m-0 border-0 bd-example" onload="foo()">
+  <div id="carouselExampleCaptions" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
-    <div id="consultar">
-        <a href="./pages/datos.html"> Consultar estado de vuelos </a>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+          <img src="../img/banner/portada.jpg" alt="" width="100%" height="400">
+        <div class="carousel-caption d-none d-md-block">
+          <h1>3 CUOTAS SIN INTERES</h1>
+          <h6>Para vuelos nacionales</h6>
+        </div>
+      </div>
+      <div class="carousel-item">
+          <img src="../img/banner/BuenosAires.png" alt="" width="100%" height="400">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>BUENOS AIRES</h5>
+          <button href="./miarchivo.html" id="IDSdos" type="button" class="btn btn-primary">¡Compra tu pasaje aquí!</button>
+        </div>
+      </div>
     </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <body class="p-7 m-0 border-0 bd-example">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">Vuelos</a>
+      </li>
+    </ul>
+    <br>
+    <div class="row">
+      <h5>ORIGEN</h5>
+      <select id="selectOrigen" class="form-select" aria-label="Default select example" >
+        <option value="0">Seleccione Origen</option>
+        <option value="1">Buenos Aires (BUE)</option>
+        <option value="2">Bariloche (BRC)</option>
+        <option value="3">Córdoba (COR)</option>
+        <option value="4">Corriente (CNQ)</option>
+        <option value="5">Jujuy (JUJ)</option>
+        <option value="6">Mendoza (MDZ)</option>
+        <option value="7">Neuquén (NQN)</option>
+      </select>
+      <h5>DESTINO</h5>
+      <select id="selectDestino" class="form-select" aria-label="Default select example">
+        <option value="todos">Todos</option>
+      </select>
+      <button id="buscar" class="btn btn-outline-success" type="submit" >buscar</button>     
+    </div>
+  </body>        
+  <div class="row row-cols-1 row-cols-md-2 g-4" id="container">
 </body>
-
