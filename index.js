@@ -83,7 +83,7 @@ function foo(){
     return new Promise((resolve) => {
       temporizador = setTimeout(() => {
         resolve();
-      }, 60000); // 1 minuto en milisegundos
+      }, 300000); // 5 minutos en milisegundos
     });
   }
   solicitarRecarga().then(() => {
